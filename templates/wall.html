@@ -1,0 +1,107 @@
+[[extend "layout.html"]]
+<div id="page-banner-area" class="page-banner-area" style="background-image:url([[=URL('static/images/banner_bg.jpg')]])">
+  <!-- Subpage title start -->
+  <div class="page-banner-title">
+    <div class="text-center">
+      <h2>[[=aus.username+"'s Wall"]]</h2>
+      <ol class="breadcrumb">
+        <li>
+          <a href="[[=URL('index')]]">Home/</a>
+        </li>
+        <li>
+          hhhh
+        </li>
+      </ol>
+    </div>
+  </div><!-- Subpage title end -->
+</div><!-- Page Banner end -->
+      
+      
+<!-- ts speaker start-->
+<section id="ts-speakers" class="ts-speakers speaker-classic" style="background-image:url([[=URL('static/images/white_bg.png')]])">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-sm-10">
+            <img  class="img-thumbnail img-responsive rounded-circle" src="[[=URL('static', 'members', 'pics', member.img)]]" alt="[[#=member.first_name]]">
+            [[=m_request.button("Crush on me")(f_id=1, t_id=userID)]]
+        </div>
+    
+        <div class="col-lg-7">
+       
+             <p class="blockquote">  How  you transform your business as technology, consumer, habits industry dynamics change? Find out from those leading the charge. How  you transform your business as technology, consumer, habits industry dynamics change? Find out from those leading the charge. How  you transform your business as technology, consumer, habits industry dynamics change? Find out from those leading the charge. How  you transform your business as technology, consumer, habits industry dynamics change? Find out from those leading the charge.
+                             </p>
+                             <div class="panel-group faq-item" id="accordion" role="tablist" aria-multiselectable="true">
+
+                        <div class="panel faq-list panel-default">
+                           <div class="panel-heading" role="tab" id="headingOne">
+                              <h4 class="panel-title">
+                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                         Bio Data
+                                       </a>
+                              </h4>
+                           </div>
+                           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                  
+
+          <table class="table">
+
+              <tr class="wow slideInLeft" data-wow-delay="100ms">
+
+        <td>
+                    Name:
+                  </td>
+                  <td>
+                       [[="{username}-{first_name} {last_name}".format(**aus)]]
+
+              </td>
+              </tr>
+
+
+              <tr class="wow fadeInDown" data-wow-delay="300ms">
+                  <td>
+                      Age:
+                  </td>
+                 <td> [[=member.dob]]years</td>
+              </tr>
+              
+              <tr class="wow fadeInDown" data-wow-delay="400ms">
+                  <td>
+              Location:
+                  </td>
+                  <td>[[=member.locations]]</td>
+                </tr>
+                 <tr class="wow fadeInDown" data-wow-delay="400ms">
+                  <td>
+              Religion:
+                  </td>
+                  <td>[[=member.religion]]</td>
+                </tr>
+              <tr class="wow fadeInDown" data-wow-delay="500ms">
+                  <td>
+                  Status:
+                  </td>
+                  <td>[[=member.relationship_status]]</td>
+              </tr>
+              <tr class="wow fadeInDown" data-wow-delay="600ms">
+                  <td>
+                   Seeking:
+                  </td>
+                  <td>
+                      [[=member.seeking]]
+                  </td>
+              </tr>
+                    </table>
+                </div>
+                           </div>
+                        </div>
+            </div>
+        </div>
+         
+       </div>
+       </div>
+       
+
+</div>
+</section>

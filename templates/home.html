@@ -1,0 +1,102 @@
+[[extend "layout.html"]]
+ <div id="page-banner-area" class="page-banner-area" style="background-image:url([[=URL('static/images/banner_bg.jpg')]])">
+         <!-- Subpage title start -->
+         <div class="page-banner-title">
+            <div class="text-center">
+               <h2>Membershhh</h2>
+               <ol class="breadcrumb">
+                  <li>
+                     <a href="[[=URL('index')]]">Home/</a>
+                  </li>
+                  <li>
+                   hhhh
+                  </li>
+               </ol>
+            </div>
+         </div><!-- Subpage title end -->
+      </div><!-- Page Banner end -->
+      
+      
+      <!-- ts speaker start-->
+      <section id="ts-speakers" class="ts-speakers speaker-classic" style="background-image:url([[=URL('static/images/white_bg.png')]])">
+         <div class="container">
+            <div class="row justify-content-center">[[#=form]]
+               
+                 [[for n, member in enumerate(members):]]
+                 [[if  member.auth_user:]]
+                 
+               <div class="col-lg-3 col-md-6">
+                  <div class="ts-speaker">
+                     <div class="speaker-img">
+                         <img class="img-fluid" src="[[=URL('static', 'members', 'pics', member.info.img)]]" alt="[[=member.auth_user.first_name +'image']]">
+                        <a href="[[='#popup_'+str(n+1)]]" class="view-speaker ts-image-popup" data-effect="mfp-zoom-in">
+                                    <i class="icon icon-plus"></i>
+                                </a>
+                     </div>
+                     <div class="ts-speaker-info">
+                        
+                        <h3 class="ts-title"><a href="[[=URL('wall/%s'%member.auth_user.id)]]">[[="%s"%(member.auth_user.username)]] </a></h3>
+                        <p>
+                            [[=member.info.locations]]
+                        </p>
+                     </div>
+                  </div>
+                  <!-- popup start-->
+
+                
+                  <div id="[[='popup_'+str(n+1)]]" class="container ts-speaker-popup mfp-hide">
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="ts-speaker-popup-img">
+                             <img src="[[=URL('static', 'members', 'pics', member.info.img)]]" alt="[[=member.auth_user.first_name+'image']]">
+                           </div>
+                        </div><!-- col end-->
+                        <div class="col-lg-6">
+                           <div class="ts-speaker-popup-content">
+                              <h3 class="ts-title">[[=member.auth_user.first_name]]</h3>
+                              <!--span class="speakder-designation">Cheif Architecture</span>
+                              <img class="company-logo" src="images/sponsors/sponsor-6.png" alt=""-->
+                              <p>
+                                  [[=member.info.bio]]
+                                 <!--World is committed to making participation in the event a harass ment free experience
+                                 for everyone, regardless of level experience gender, gender identity and expression-->
+                              </p>
+                              <h4 class="session-name">
+                                 [[=member.auth_user.last_name +"'s "]]Bio
+                              </h4>[[=like.button("Love Me!")(f_id=userID, t_id=member.info.users_id)]]
+                            <div class="row">
+                                 <div class="col-lg-10 col-sm-12">
+                                    <div class="speaker-session-info">
+
+                                       <p class="">
+                                          <ul class="list-group text-dark">
+                                              <li class="list-group-item">Gender: <span>[[=member.info.relationship_status]]</span></li>
+                                              <li class="list-group-item">Seeking: <span>[[=member.info.seeking]]</span></li>
+                                              <li class="list-group-item">Gender: <span>[[=member.info.relationship_status]]</span></li>
+                                              <li class="list-group-item">Location: <span>[[=member.info.locations]]</span></li>
+                                              <li class="list-group-item">Gender: <span>[[=member.info.relationship_status]]</span></li>
+                                              <li class="list-group-item">Qualification: <span>{{=member.info.seeking}}</span></li>
+                                              
+                                            </ul>
+                                       </p>
+                                    </div>
+                                 </div>
+                                 
+                              </div>
+
+                           </div><!-- ts-speaker-popup-content end-->
+                        </div><!-- col end-->
+                     </div><!-- row end-->
+                  </div><!-- popup end-->
+
+               </div> <!-- col end-->
+                [[pass]]
+                 [[pass]]
+
+               </div>
+            </div><!-- row end-->
+         </div><!-- container end-->
+
+
+      </section>
+      <!-- ts speaker end-->

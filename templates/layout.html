@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="[[=URL('static')]]/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAAQEAAAEAIAAwAAAAFgAAACgAAAABAAAAAgAAAAEAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAA=="/>
+    <!--link rel="stylesheet" href="css/bulma.css"-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- Bootstrap -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+<!--#f12365-->
+   <!-- Animation -->
+   <link rel="stylesheet" href="css/animate.css">
+   <!-- magnific -->
+   <link rel="stylesheet" href="css/magnific-popup.css">
+   <!-- carousel -->
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <!-- isotop -->
+   <link rel="stylesheet" href="css/isotop.css">
+   <!-- ico fonts -->
+   <link rel="stylesheet" href="css/xsIcon.css">
+   <!-- Template styles-->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Responsive styles-->
+   <link rel="stylesheet" href="css/responsive.css">
+    [[block page_head]]<!-- individual pages can customize header here -->[[end]]
+  </head>
+  <body class="body-color">
+       <div class="body-inner">
+      <!-- Header start -->
+      <header id="header" class="header header-transparent">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <!-- logo-->
+               <a class="navbar-brand" href="index-2.html">
+                  <img src="images/logos/logo.png" alt="">
+               </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"><i class="icon icon-menu"></i></span>
+               </button>
+                
+               <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  
+                  <ul class="navbar-nav ml-auto">
+                     [[if not globals().get('user'):]]
+                    
+                    
+                    
+                      <li class="header-ticket nav-item">
+                        <a class="ticket-btn btn" href="[[=URL('auth/register')]]" style="background:#ff007a;">Register
+                        </a>
+                        
+                     </li>
+                      <li class="header-ticket nav-item">
+                        <a class="ticket-btn btn" href="[[=URL('auth/login')]]">Login
+                        </a>
+                        
+                     </li>
+                       [[else:]]
+                       <li class="nav-item">
+                        <a  href="[[=URL('auth/login')]]">Home
+                        </a>
+                        
+                     </li>
+                     <li class="nav-item">
+                        <a href="[[=URL('auth/login')]]">Search
+                        </a>
+                        
+                     </li>
+                     <li class="nav-item">
+                        <a href="[[=URL('auth/login')]]">Wall
+                        </a>
+                        
+                     </li>
+                     <li class="nav-item">
+                        <a href="[[=URL('auth/login')]]">Message
+                        </a>
+                        
+                     </li>
+                      <li class="header-ticket nav-item dropdown">
+                        <a class="ticket-btn btn" href="pricing.html">[[=globals().get('user').get('email')]]
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                           
+                           <li><a  href="[[=URL('auth/logout')]]">Logout</a></li>
+                            <li><a  href="[[=URL('auth/profile')]]">Profile</a></li>
+                            
+                        </ul>
+                     </li>
+                       [[pass]]
+                  </ul>
+               
+               </div>   
+            </nav>
+         </div><!-- container end-->
+      </header>
+      <!--/ Header end -->
+
+      <!-- beginning of HTML inserted by extending template -->
+      [[include]]
+      <!-- end of HTML inserted by extending template -->
+  <!-- ts footer area start-->
+      <div class="footer-area">
+         <!-- footer start-->
+         <footer class="ts-footer ts-footer-item">
+            <div class="container">
+               <div class="row footer-border justify-content-center">
+                  <div class="col-lg-6">
+           
+                     <div class="copyright-text text-center">
+                        <p><a target="_blank" href="https://agesxpat.ml"> Ages Xpat</a> &copy;<script>document.write(new Date().getFullYear())</script></p>
+                     </div>
+                      
+                  </div>
+               </div><!-- row end-->
+            </div><!-- container end-->
+         </footer>
+         <!-- footer end-->
+
+  </body>
+  <script src="js/sugar.min.js"></script>
+  <script src="js/axios.min.js"></script>
+  <script src="js/vue.min.js"></script>
+  <!-- initialize jQuery Library -->
+     <script src="js/jquery.js"></script>
+      <script src="js/popper.min.js"></script>
+      <!-- Bootstrap jQuery -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Counter -->
+      <script src="js/jquery.appear.min.js"></script>
+      <!-- Countdown -->
+      <script src="js/jquery.jCounter.js"></script>
+      <!-- magnific-popup -->
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <!-- carousel -->
+      <script src="js/owl.carousel.min.js"></script>
+      <!-- Waypoints -->
+      <script src="js/wow.min.js"></script>
+      <!-- isotop -->
+      <script src="js/isotope.pkgd.min.js"></script>
+
+    <script src="js/main.js"></script>
+  [[block page_scripts]]<!-- individual pages can add scripts here -->[[end]]
+</html>
+
